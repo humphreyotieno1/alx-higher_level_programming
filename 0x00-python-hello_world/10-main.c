@@ -1,7 +1,8 @@
+#include "lists.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "lists.h"
+
 
 /**
  * main - check the code
@@ -28,7 +29,7 @@ int main(void)
 
 	if (check_cycle(head) == 0)
 		printf("Linked list has no cycle\n");
-	else if (check_cycle(head) == 1
+	else if (check_cycle(head) == 1)
 			printf("Linked list has a cycle\n");
 
 	current = head;
