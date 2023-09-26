@@ -4,8 +4,8 @@ import math
 
 
 class MagicClass:
-    """Initialize and def methods area and circumference"""
-    def __init__(self, radius):
+    """Initialize and define methods area and circumference"""
+    def __init__(self, radius=0):
         """Initialize MagicClass"""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
@@ -13,9 +13,9 @@ class MagicClass:
         self.__radius = radius
 
     def area(self):
-        """Find area"""
-        return self._radius * self._radius * math.pi
+        """Calculate area"""
+        return self.__radius ** 2 * math.pi
 
     def circumference(self):
-        """FInd circumference"""
-        return 2 * math.pi * self._radius
+        """Calcualte circumference"""
+        return 2 * math.pi * self.__radius
