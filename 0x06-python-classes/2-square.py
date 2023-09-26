@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""Def class Square"""
+"""Define class Square"""
 
 
 class Square:
     """Rep class Square"""
-    size: def __init__(self, size=0):
+    def __init__(self, size=0):
         """
-        Initialise new square
+        Initialize new square
+
         Args:
             size(int): size of new square
         """
