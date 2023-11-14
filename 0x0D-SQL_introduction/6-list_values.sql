@@ -1,3 +1,3 @@
--- show all row nin first_table
+-- show all rows in first_table
 
-SELECT * FROM first_name;
+SELECT * FROM first_table;
