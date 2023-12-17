@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-update state: given id, change state name
+delete from table states with names containing letter 'a'
 """
 
 from sys import argv
@@ -20,8 +20,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter_by(id=2).first()
-    state.name = "New Mexico"
+    states = session.query(State).filter(State.name.like('%a%')).all()
+    for s in states:
+        session.delete(s)
 
     session.commit()
     session.close()
+
