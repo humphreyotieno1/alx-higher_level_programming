@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-return state id given state name; SQL injection free
+update state: given id, change state name
 """
 
 from sys import argv
@@ -20,9 +20,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter_by(name=argv[4]).first()
-    if state:
-        print("{:d}".format(state.id))
-    else:
-        print("Not found")
+    new = State(name="Louisiana")
+    session.add(new)
+    session.commit()
+
+    print("{:d}".format(new.id))
+
     session.close()
