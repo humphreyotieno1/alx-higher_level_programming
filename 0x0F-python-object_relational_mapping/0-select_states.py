@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""
-return table values
-"""
-
+"""lists all states from the database"""
 import MySQLdb
-from sys import argv
+import sys
+
 
 if __name__ == "__main__":
-    myDatabase = mySQLdb.connect(host="localhost", user=sys.argv[1],
-                                passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states")
-    for row in cursor.fetchall():
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
     cursor.close()
     db.close()
